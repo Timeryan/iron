@@ -1,4 +1,4 @@
-FROM node:14.15.3 as builder
+FROM node:latest as node
 WORKDIR /app
 COPY ironprocessing /app/
 RUN npm install
