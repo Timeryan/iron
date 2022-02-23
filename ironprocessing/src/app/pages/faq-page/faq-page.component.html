@@ -1,0 +1,9 @@
+<app-header></app-header>
+<div class="faq">
+  <div class="faq__content">
+    <div class="faq__card" *ngFor="let faq of faqs">
+      <app-faq-card [faq]="faq"></app-faq-card>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

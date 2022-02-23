@@ -1,0 +1,58 @@
+.card {
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  margin: 30px;
+
+  &__content {
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  &__name {
+    &__container{
+      padding: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    color: #00247DFF;
+    font-size: 20px;
+    font-weight: 800;
+  }
+  &__phone {
+    &__container{
+      padding: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &__text {
+    &__container{
+      padding: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__date {
+    &__container{
+      padding: 10px;
+      display: flex;
+    }
+    color: #00247DFF;
+    font-size: 16px;
+    font-weight: 800;
+  }
+}

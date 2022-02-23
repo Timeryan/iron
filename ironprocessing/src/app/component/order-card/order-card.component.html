@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card__content">
+    <div>
+      <div class="card__name__container">
+        <span class="card__name">{{order.fullName}}</span>
+      </div>
+      <div class="card__phone__container">
+        <span class="card__phone">{{order.phone}}</span>
+      </div>
+      <div class="card__text__container">
+        <span class="card__text">{{order.discription}}</span>
+      </div>
+      <div class="card__date__container">
+        <span class="card__date">{{order.createdDate | date:'medium'}}</span>
+      </div>
+    </div>
+    <app-good-card *ngIf="order.advertisement" [good]="order.advertisement"></app-good-card>
+  </div>
+</div>

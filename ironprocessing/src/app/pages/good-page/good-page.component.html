@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="good">
+  <div class="good-carousel" *ngIf="good.photos.length > 1">
+    <p-carousel [value]="good.photos" [numVisible]="1" [numScroll]="1" [autoplayInterval]="8000" [circular]="true">
+      <ng-template let-photo pTemplate="item">
+        <div class="good-carousel__item">
+          <img class="good-carousel__item__img" [src]="'data:image/png;base64,' + photo.content" alt=""/>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <img *ngIf="good.photos.length == 1" class="good-carousel__item__img"  [src]="'data:image/png;base64,' + good?.photos[0]?.content" alt="">
+  <div *ngIf="good.photos.length == 0" class="good-carousel__item__img__blank">Нет фото</div>
+  <div class="good__description">
+    <div>
+      <div class="good__title">{{good.title}}</div>
+      <div class="good__text">{{good.description}}</div>
+    </div>
+    <div class="good__prise-and-button">
+      <div class="good__price">{{good.price}} руб.</div>
+      <div class="good__button" [routerLink]='"/individual/" + good.id' >Заказать</div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

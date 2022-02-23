@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="main__background">
+  </div>
+  <div class="main__title">
+    Металлоизделия
+  </div>
+  <div class="main__secondary-title">
+    <span> • Кованные изделия</span><br/>
+    <span> • Двери</span>
+    <span> • Ворота</span><br/>
+    <span> • Решетки</span>
+    <span> • Ограждения</span><br/>
+    <span> • Козырьки</span>
+    <span> • Столярные работы</span>
+  </div>
+  <div class="main__cards">
+    <app-main-card [title]="'Посмотреть'" [text]="'Готовые товары'" [routerLink]="'/goods'"></app-main-card>
+    <app-main-card [title]="'Заказать'" [text]="'Товар по вашему макету'" [routerLink]="'/individual/0'"></app-main-card>
+    <app-main-card [title]="'Часто'" [text]="'Задачаемые вопросы'" [routerLink]="'/faq'"></app-main-card>
+  </div>
+  <div class="main-carousel">
+    <p-carousel [value]="goods" [numVisible]="3" [numScroll]="1" [autoplayInterval]="8000" [circular]="true">
+      <ng-template let-good pTemplate="item">
+        <div class="main-carousel__item">
+          <img class="main-carousel__item__img" src="{{good.imgPath}}" alt=""/>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="main-map">,
+    <ya-map [center]="[44.575653891139815, 33.44120884324589]" [zoom]="18">
+      <ya-placemark [geometry]="[44.575653891139815, 33.44120884324589]"></ya-placemark>
+    </ya-map>
+  </div>
+</div>

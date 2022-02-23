@@ -1,0 +1,55 @@
+<div class="login" *ngIf="!isLogin">
+  <form class="login__form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+
+    <label for="first-name">Логин: </label>
+    <input id="first-name" type="text" formControlName="name">
+
+    <label for="last-name">Пароль: </label>
+    <input id="last-name" type="text" formControlName="password">
+
+    <button type="submit">Войти</button>
+  </form>
+</div>
+<div class="addAdvertisement" *ngIf="isLogin">
+  <h2>Добавление объявлений</h2>
+  <form class="addAdvertisement__form" [formGroup]="advertisementForm" (ngSubmit)="createAd()">
+
+    <label for="title">Название: </label>
+    <input id="title" type="text" formControlName="title">
+
+    <label for="description">Описание: </label>
+    <textarea id="description" type="text" formControlName="description"></textarea>
+
+    <label for="price">Цена: </label>
+    <input id="price" type="text" formControlName="price">
+
+    <button type="submit">Добавить</button>
+  </form>
+  <form class="addAdvertisement__formPhoto" [formGroup]="formGroupPhotos">
+    <ngx-dropzone
+      (change)="onSelect($event)"
+      accept="image/jpeg,image/jpg,image/png"
+      [maxFileSize]="5242880"
+    >
+      <ngx-dropzone-label
+      >Перенесите сюда фотографии
+      </ngx-dropzone-label
+      >
+      <ngx-dropzone-preview
+        *ngFor="let f of formGroupPhotos.controls.photos.value"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+        <ngx-dropzone-label>{{ f.name }}</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+    </ngx-dropzone>
+  </form>
+</div>
+<div class="orders" *ngIf="isLogin">
+  <h2>Заказы</h2>
+  <div class="orders__content">
+    <div class="orders__card" *ngFor="let order of orders">
+      <app-order-card [order]="order"></app-order-card>
+    </div>
+  </div>
+</div>

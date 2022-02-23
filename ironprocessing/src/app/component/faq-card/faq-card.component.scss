@@ -1,0 +1,12 @@
+.faq{
+  width: 800px;
+  padding-bottom: 40px;
+  &__title{
+    font-size: 24px;
+    font-weight: 600;
+  }
+  &__text{
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

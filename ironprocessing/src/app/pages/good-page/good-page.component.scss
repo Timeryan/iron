@@ -1,0 +1,72 @@
+.good{
+  display: flex;
+  padding: 150px 350px;
+  height: 77vh;
+  justify-content: center;
+
+  &__description{
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    width: 500px;
+  }
+  &__title {
+    color: #00247DFF;
+    font-size: 26px;
+    font-weight: 800;
+  }
+  &__text {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+  &__price{
+    font-size: 26px;
+    font-weight: 800;
+  }
+  &__prise-and-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    padding: 15px 30px 15px 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-weight: 800;
+    background-color: #667cb1;
+
+    &:hover {
+      background-color: #00247d;
+      color: #ffffff;
+    }
+  }
+  &-carousel {
+    width: 700px;
+    height: 500px;
+    &__item {
+      &__img{
+        width: 600px;
+        height: 400px;
+        object-fit: contain;
+
+        &__blank{
+          width: 600px;
+          height: 400px;
+          background: #f3f3f3;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 26px;
+          font-weight: 800;
+          color: #8f8f8f;
+        }
+      }
+    }
+  }
+}

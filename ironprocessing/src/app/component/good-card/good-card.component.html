@@ -1,0 +1,16 @@
+<div class="card" [routerLink]='"/good/" + good.id + "/" + good.titleUrl'>
+  <div class="card__content">
+    <div class="card__img">
+      <img [src]="'data:image/png;base64,' + good?.photo?.content" alt="">
+    </div>
+    <div class="card__title__container">
+      <span class="card__title">{{good.title}}</span>
+    </div>
+    <div class="card__text__container">
+      <span class="card__text">{{good.description}}</span>
+    </div>
+    <div class="card__price__container">
+      <span class="card__price">{{good.price}} руб.</span>
+    </div>
+  </div>
+</div>

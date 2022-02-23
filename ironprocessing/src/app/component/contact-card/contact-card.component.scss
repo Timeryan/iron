@@ -1,0 +1,43 @@
+.card {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  width: 450px;
+  height: 650px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+  margin: 30px;
+  transition: 0.3s;
+
+  &__content {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+  }
+
+  &__title {
+    color: #00247DFF;
+    font-size: 32px;
+    font-weight: 1000;
+    padding-top: 10px;
+  }
+  &__text {
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+
+  &__img {
+  }
+}
+
+img {
+  width: 450px;
+  height: 450px;
+  border-radius:  10px 10px 0 0;
+  object-fit: cover;
+}
+.pi{
+  font-size: 20px;
+  padding-right: 10px;
+}

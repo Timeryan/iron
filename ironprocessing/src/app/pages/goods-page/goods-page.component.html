@@ -1,0 +1,13 @@
+<app-header></app-header>
+<div class="goods">
+  <div class="goods__content"
+       infiniteScroll
+       [infiniteScrollDistance]="2"
+       [infiniteScrollThrottle]="50"
+       (scrolled)="onScroll()">
+    <div class="goods__card" *ngFor="let good of goods">
+      <app-good-card [good]="good"></app-good-card>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
