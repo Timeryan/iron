@@ -13,3 +13,12 @@
     flex-wrap: wrap;
   }
 }
+:host ::ng-deep .custom-spinner .p-progress-spinner-circle {
+  animation: custom-progress-spinner-dash 1.5s ease-in-out infinite, custom-progress-spinner-color 6s ease-in-out infinite;
+}
+@keyframes custom-progress-spinner-color {
+  100%,
+  0% {
+    stroke: #667cb1;
+  }
+}

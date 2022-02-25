@@ -10,10 +10,14 @@ import {GoodModel} from '../../models/good.model';
 export class GoodsPageComponent implements OnInit {
 
   public goods: GoodModel[];
+  public isLoading = false;
   constructor(private goodService: AdService) { }
 
   ngOnInit(): void {
-    this.goodService.goods$.subscribe((res) => (this.goods = res));
+    this.goodService.goods$.subscribe((res) => {
+      this.goods = res;
+      this.isLoading = true;
+    });
   }
   onScroll(): void {
     this.goodService.updateAds();

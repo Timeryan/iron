@@ -11,13 +11,18 @@ import {GoodModel} from '../../models/good.model';
 export class GoodPageComponent implements OnInit {
 
   public good: any;
+  isLoading = false;
 
   constructor(private goodService: AdService,
               private activatedRoute: ActivatedRoute, ) { }
 
   ngOnInit(): void {
+    this.isLoading = false;
     this.goodService.GetById(parseInt(this.activatedRoute.snapshot.params.id, 10)).subscribe(
-      (res) => this.good = res
+      (res) => {
+        this.good = res;
+        this.isLoading = true;
+      }
     );
   }
 }

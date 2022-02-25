@@ -25,6 +25,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import {GalleriaModule} from 'primeng/galleria';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { OrderCardComponent } from './component/order-card/order-card.component';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 
@@ -63,6 +64,7 @@ registerLocaleData(localeRu, 'ru');
     NgxDropzoneModule,
     GalleriaModule,
     InfiniteScrollModule,
+    ProgressSpinnerModule,
   ],
   providers: [
     {

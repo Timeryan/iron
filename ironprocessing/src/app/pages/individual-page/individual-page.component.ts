@@ -14,6 +14,7 @@ export class IndividualPageComponent implements OnInit {
 
   public formGroupOrder: FormGroup;
   public good: any;
+  public isLoading = false;
 
   constructor(private formBuilder: FormBuilder,
               private activatedRoute: ActivatedRoute,
@@ -30,7 +31,7 @@ export class IndividualPageComponent implements OnInit {
     });
     if (parseInt(this.activatedRoute.snapshot.params.id, 10) !== 0){
       this.goodService.GetById(parseInt(this.activatedRoute.snapshot.params.id, 10)).subscribe(
-        (res) => {this.good = res; this.good.photo = this.good.photos[0];}
+        (res) => {this.good = res; this.good.photo = this.good.photos[0]; this.isLoading = true}
       );
     }
   }

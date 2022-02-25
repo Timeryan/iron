@@ -8,6 +8,15 @@
   <label for="discription" class="order__text">Описание желаемого товара</label>
   <textarea id="discription" formControlName="discription" class="order__textarea"></textarea>
   <div class="order__good">
+    <div *ngIf="!isLoading">
+      <p-progressSpinner
+        [style]="{ width: '200px', height: '200px' }"
+        styleClass="custom-spinner"
+        strokeWidth="1"
+        fill="none"
+        animationDuration=".5s"
+      ></p-progressSpinner>
+    </div>
     <app-good-card *ngIf="good" [good]="good"></app-good-card>
   </div>
   <button class="order__button" type="submit">Отправить</button>

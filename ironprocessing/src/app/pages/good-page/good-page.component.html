@@ -1,5 +1,14 @@
 <app-header></app-header>
-<div class="good">
+<div class="good" *ngIf="!isLoading">
+  <p-progressSpinner
+    [style]="{ width: '300px', height: '300px' }"
+    styleClass="custom-spinner"
+    strokeWidth="1"
+    fill="none"
+    animationDuration=".5s"
+  ></p-progressSpinner>
+</div>
+<div class="good" *ngIf="isLoading">
   <div class="good-carousel" *ngIf="good.photos.length > 1">
     <p-carousel [value]="good.photos" [numVisible]="1" [numScroll]="1" [autoplayInterval]="8000" [circular]="true">
       <ng-template let-photo pTemplate="item">
