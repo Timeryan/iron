@@ -14,6 +14,7 @@ export class GoodsPageComponent implements OnInit {
   constructor(private goodService: AdService) { }
 
   ngOnInit(): void {
+    this.isLoading = false;
     this.goodService.goods$.subscribe((res) => {
       this.goods = res;
       this.isLoading = true;
