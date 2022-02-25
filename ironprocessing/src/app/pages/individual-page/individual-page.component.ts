@@ -33,6 +33,8 @@ export class IndividualPageComponent implements OnInit {
       this.goodService.GetById(parseInt(this.activatedRoute.snapshot.params.id, 10)).subscribe(
         (res) => {this.good = res; this.good.photo = this.good.photos[0]; this.isLoading = true}
       );
+    }else {
+      this.isLoading = true;
     }
   }
   public createOrder(): void{
