@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: ironprocessing/Dockerfile
     ports:
-      - 433:80
+      - 433:433
     restart: on-failure
     depends_on:
       - "api"
