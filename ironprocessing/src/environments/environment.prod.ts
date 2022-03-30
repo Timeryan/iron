@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'http://sevmetallkot.ru',
+  apiUrl: 'https://sevmetallkot.ru',
   production: true
 };
