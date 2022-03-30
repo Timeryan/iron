@@ -13,6 +13,12 @@ builder.Services.AddControllers();
 
 });*/
 
+builder.Services.AddHttpsRedirection(options =>
+{
+    options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+    options.HttpsPort = 5000;
+});
+
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("ConnectionStrings__PostgresDb"));
@@ -41,6 +47,9 @@ app.UseCors(x => x
 .AllowAnyOrigin()
 .AllowAnyMethod()
 .AllowAnyHeader());
+
+app.UseHttpsRedirection();
+
 
 app.UseAuthorization();
 
