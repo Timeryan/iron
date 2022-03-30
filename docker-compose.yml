@@ -20,9 +20,11 @@ services:
       - ConnectionStrings__PostgresDb=Server=postgres;Database=Ironprocessing;Username=ad_user;Password=135531;Port=5432
       - ASPNETCORE_URLS=https://+:5000
       - ASPNETCORE_Kestrel__Certificates__Default__Password=135531
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/iron.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/iron.pfx
     depends_on:
       - "postgres"
+    volumes:
+      - ./https:/https:ro
 
   postgres:
     image: "postgres"
